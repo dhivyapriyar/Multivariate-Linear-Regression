@@ -27,15 +27,25 @@ developed by: dhivyapriya. r
 register no.: 22008389
 ```
 import pandas as pd
+
 from sklearn import linear_model
+
 df=pd.read_csv("cars.csv")
+
 x=df[['Weight','Volume']]
+
 y=df['CO2']
+
 regr=linear_model.LinearRegression()
+
 regr.fit(x,y)
+
 print('Coefficients:',regr.coef_)
+
 print('Intercept:',regr.intercept_)
+
 predictedCO2=regr.predict([[1995,522]])
+
 print("Predicted CO2 emissiom based on weight and volume:",predictedCO2)
 
 ## Output:
